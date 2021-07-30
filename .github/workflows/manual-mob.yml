@@ -4,7 +4,13 @@ on:
   workflow_dispatch:
     inputs:
 
-      - name: Mobile Security Framework
+jobs:
+  apk:
+    name: Mobile Security Framework
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Run MobSF
         run: |
           docker pull opensecurity/mobile-security-framework-mobsf
           docker run -itd -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest 
